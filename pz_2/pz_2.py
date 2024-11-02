@@ -11,6 +11,6 @@ try:
     print("Количество полных часов, прошедших с начала суток:", passed_hours)
 
 #проверка
-except :
+except ValueError:
     print("Что-то пошло не так")
 
