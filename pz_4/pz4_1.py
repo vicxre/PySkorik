@@ -3,9 +3,12 @@
 a = int(input("Введите значение A:"))
 b = int(input("Введите значение B:"))
 
-if a>b:
+#условие
+if a > b:
     print ("а не должно быть больше b")
 else:
+    n = b - a
+    print(n)
 
-    range
-    sorted(len(a, b))
+sorted print(a==b)
+len
