@@ -3,12 +3,15 @@
 a = int(input("Введите значение A:"))
 b = int(input("Введите значение B:"))
 
-#условие
+    #условие
 if a > b:
     print ("а не должно быть больше b")
 else:
     n = b - a
-    print(n)
+    print("Количсетсво чисел между а и б:", n)
 
-sorted print(a==b)
-len
+for i in range(a, b + 1):
+    print(i)
+
+
+
