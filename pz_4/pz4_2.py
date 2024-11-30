@@ -1,7 +1,6 @@
 #Дано целое число N (>0). Если оно является степенью числа 3, то вывести TRUE, если не является — вывести FALSE.
 
 try:
-
     n = int(input("Введите целое число, которое ялвяется степенью числа 3:"))
 
     if n < 0:
@@ -9,11 +8,20 @@ try:
 
     else:
 
-        if n % 3 == 0:
-            print("true")
+        if n == 0:
+            print("Не является степенью числа 3")
 
         else:
-            print("false")
+
+            while n % 3 == 0:
+                n //= 3
+
+    if n == 1:
+        print(True)
+
+    else:
+        print(False)
+
 
 except ValueError:
     print("Что-то пошло не так!")
