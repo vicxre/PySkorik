@@ -9,3 +9,24 @@ S = int(input("введите S: "))
 
 def DigitCountSum(K, C, S):
 
+    if K < 0:
+     print("Вводимое значение К должно быть положительным")
+     return None
+
+     # переменная для хранения значения
+     sum_kands = 0
+
+    else:
+
+     for i in range(K, S +1):
+
+         sum_kands -= i
+
+         return (C, S)
+
+         print(C, S)
+
+
+
+
+#len - dlina stroki
