@@ -2,29 +2,33 @@
 #положительного числа K, а также их сумму S (K — входной, C и S — выходные
 #параметры целого типа). С помощью этой функции найти количество и сумму цифр
 #для каждого из пяти данных целых чисел.
+try:
+    K = int(input("введите число: "))
 
-K = int(input("введите К: "))
-C = int(input("введите С: "))
-S = int(input("введите S: "))
-
-def DigitCountSum(K, C, S):
-
-    if K < 0:
-     print("Вводимое значение К должно быть положительным")
-     return None
-
-     # переменная для хранения значения
-     sum_kands = 0
-
+    if k < 0:
+        print("не по понятиям уважаемый")
     else:
 
-     for i in range(K, S +1):
+        def DigitCountSum(K):
 
-         sum_kands -= i
+            V = list(str(K))
 
-         return (C, S)
+            S = 0
 
-         print(C, S)
+            C = len(str(K))
+
+            print(C)
+
+            for i in range (C):
+                S += int(V[i])
+
+            print(S)
+
+        DigitCountSum(K)
+
+except ValueError:
+    print("что-то пошло не так ")
+
 
 
 
