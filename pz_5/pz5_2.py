@@ -3,20 +3,29 @@
 #параметры целого типа). С помощью этой функции найти количество и сумму цифр
 #для каждого из пяти данных целых чисел.
 
-K = int(input("введите k: "))
+try:
+    K = int(input("введите число: "))
 
-def DigitCountSum(k, c, s):
-
-digits = str(k)
-
-    if k < 0:
-        print("вводимое значение k должно быть положительным")
-        return None
-
+    if K < 0:
+        print("не по понятиям уважаемый")
     else:
-        amount_k = len(k)
 
-        c = 0
+        def DigitCountSum(K):
 
-        for i in range
-            c += i
+            digits = list(str(K))
+
+            S = 0
+
+            C = len(str(K))
+
+            print(C)
+
+            for i in range (C):
+                S += int(digits [i])
+
+            print(S)
+
+        DigitCountSum(K)
+
+except ValueError:
+    print("что-то пошло не так ")
