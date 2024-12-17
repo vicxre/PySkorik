@@ -6,38 +6,40 @@
 import random
 
 try:
-    K = int(input("введите число: "))
+    def DigitCountSum(K):
+    #число в строку
+        digits = list(str(K))
 
-    if K < 0:
-        print("не по понятиям уважаемый")
+    #переменная для хранения суммы цифр
+        S = 0
+
+    # Количество цифр равно длине строки
+        C = len(digits)
+
+    # Вычисляем сумму цифр
+        for digit in digits:
+            S += int(digit)
+
+    # Возвращаем количество и сумму цифр
+        return C, S
+
+
+    K = int(input("Введите число: "))
+
+    if K <= 0:
+        print("Не по понятиям уважаемый!")
     else:
+        # Вызов функции для введенного пользователем числа
+        C, S = DigitCountSum(K)
+        print(f"Количество цифр: {C}, сумма цифр: {S}")
 
-        def DigitCountSum(K):
+        # Генерируем пять случайных чисел от 1 до 99
+        numbers = [random.randint(1, 99) for _ in range(5)]
 
-            digits = list(str(K))
-
-            S = 0
-
-            C = len(str(K))
-
-            print(C, " - длина числа")
-
-            #вводит в список
-            for i in range (C):
-                S += int(digits [i])
-
-            print(S, ' - сумма цифр числа')
-
-            #рандом пяти случайных чисел
-            numbers = [random.randint(1, 99) for i in range(5)]
-
-            #обработка каждого рандом числа
-            for num in numbers:
-                C, S = DigitCountSum(num)
-                print(f"Для числа", num, 'количество цифр', C , "сумма цифр", S)
-
-
-        DigitCountSum(K)
+        # Обрабатываем каждое случайное число
+        for num in numbers:
+            C, S = DigitCountSum(num)
+            print(f"Для числа {num}: количество цифр = {C}, сумма цифр = {S}")
 
 except ValueError:
-    print("что-то пошло не так ")
+    print("Что-то пошло не так. Проверьте правильность ввода.")
