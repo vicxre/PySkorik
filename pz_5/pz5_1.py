@@ -22,7 +22,6 @@ def sum_for_range( N ,M ):
         #добавление текущего числа ко всей сумме
         all_sum += i
 
-    #возвращает переменную
     return all_sum
 
 result = sum_for_range(N, M)

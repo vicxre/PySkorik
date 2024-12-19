@@ -2,18 +2,29 @@
 #нечетные числа. Если чередуются, то вывести 0, если нет, то вывести порядковый
 #номер первого элемента, нарушающего закономерность.
 
+def check_alternating_even_odd(lst):
 
-# random для пяти чисел
-a1, a2, a3, a4, a5 = (random.randint(1, 99), random.randint(1, 99),
-                      random.randint(1, 99), random.randint(1, 99),
-                      random.randint(1, 99))
+    #проверка что список не пустой
+    if not lst:
+        return "список пуст"
 
-# до пропуска через саму функцию
-print(a1, a2, a3, a4, a5)
+    my_list = [1, 4, 3, 6]
+    result = check_alternating_even_odd(my_list)
 
-a1 = DigitCountSum(a1)
-a2 = DigitCountSum(a2)
-a3 = DigitCountSum(a3)
-a4 = DigitCountSum(a4)
-a5 = DigitCountSum(a5)
+    #с первого элемента списка
+    is_even = lst[0] % 2 == 0
+
+    for i in range(1, len(lst)):
+        # Если текущий элемент должен быть четным, но он нечетный (или наоборот)
+        if (lst[i] % 2 == 0) != is_even:
+            return i + 1
+
+        #четность на нечетность
+        is_even = not is_even
+
+    #если ошибок нет, возвращаем 0
+    return 0
+
+    print(result)
+
 
