@@ -2,27 +2,24 @@
 #отражающая продажи продукции по дням в кг. Преобразовать информацию из
 #строки в словари, с использованием функции найти среднее значение продаж по
 #каждому виду продукции, результаты вывести на экран.
-
 def averageO(sum_orange,long_orange):
 
     orange = {}
-    int.inf = "45 991 63 100 12"
-    inf = int.inf.split()
-    orange['MONDAY'] = inf[0]
-    orange['TUESDAY'] = inf[1]
-    orange['WEDNESDAY'] = inf[2]
-    orange['THURSDAY'] = inf[3]
-    orange['FRIDAY'] = inf[4]
+    int.n = "45 991 63 100 12"
+    n = int.split()
+    orange['MONDAY'] = n[0]
+    orange['TUESDAY'] = n[1]
+    orange['WEDNESDAY'] = n[2]
+    orange['THURSDAY'] = n[3]
+    orange['FRIDAY'] = n[4]
 
-    sum_orange = sum(inf)
-    long_orange = len(inf)
+    sum_orange = sum(n)
+    long_orange = len(n)
     average_orange = sum_orange / long_orange
     return average_orange
 
-averageO(sum_orange,long_orange)
-resultO = average_orange
-print(resultO)
-
+print(average0)
+print(orange)
 
 
 apple = {}
