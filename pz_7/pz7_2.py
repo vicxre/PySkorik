@@ -1,9 +1,16 @@
 #Даны строки S, S1 и S2. Заменить в строке S последнее вхождение строки S1 на строку
 #S2.
 
-s = 'salam ualeykum'
-s1 = 'bonjour'
-s2 = 'gamarjoba'
+s = 'yes no'
+s1 = 'да'
+s2 = 'нет'
 
-rfind(
-replace(s)
+b = s1[::-1]
+
+a = s1.find('тен')
+
+
+print(a,b)
+
+#rfind(
+#replace(s)
