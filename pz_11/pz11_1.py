@@ -11,7 +11,7 @@
 
 
 a = [-2, 0, 2, 6, 10]
-f1 = open('file_1.txt', 'w')
+f1 = open('file1_1.txt', 'w')
 f1.write('-2, 0, 2, 6, 10')
 #f1.writelines(a)
 print(f1.read())
