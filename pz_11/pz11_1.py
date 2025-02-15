@@ -10,16 +10,14 @@
 #Максимальный элемент кратный 5: 15
 
 
-a = [-2, 0, 2, 6, 10]
-f1 = open('file1_1.txt', 'w')
-f1.write('-2, 0, 2, 6, 10')
-#f1.writelines(a)
-print(f1.read())
-f1.close()
+a = '-2, 0, 2, 6, 10'
+f1 = open('file11_1.txt', 'w')
+f1.write(a)
+
+b = '-1, 1, 3, 7, 15'
+f2 = open('file11_2.txt', 'w')
+f1.write(b)
 
 
-f2 = [-1, 1, 3, 5, 15]
-f2 = open('file_2.txt', 'r')
 
-f3 = []
-f3 = open('file_3.txt', 'w')
+
