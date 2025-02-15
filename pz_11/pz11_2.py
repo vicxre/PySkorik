@@ -3,12 +3,16 @@
 #который поместить текст в стихотворной форме предварительно удалив букву «с» из
 #текста.
 
-f1 =
-f1 = open('text18-25.txt')
-for line in f1:
- print(line, remove('c','С'))
-print(type(f1.read()))
+f1 = open('text18-25.txt', 'r', encoding='utf-8')
+do = f1.read()
+
+print('БЫЛО:')
+print(do)
+
+#реплейс удаление из стр до и после
+stalo = do.replace('с','').replace('С','')
+
 f1.close()
 
-
-
+print('СТАЛО:')
+print(stalo)
