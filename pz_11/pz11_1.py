@@ -19,13 +19,22 @@ print(a)
 #2file
 b = '-1, 1, 3, 7, 15'
 f2 = open('file11_2.txt', 'w')
-f1.write(b)
+f2.write(b)
 print(b)
 
+#стр в список цел. чисел
+lista = list(map(int, a.split(', ')))
+listb = list(map(int, b.split(', ')))
+
 #Количество элементов 1and2:
-c = a + b
+c = lista + listb
 print('Количество элементов: ')
 print(len(c))
 
+#min and max result
+minresult = (min(c)) // 2
+maxresult = (max(c)) // 5
+print('минимальное кратное двум: ', minresult)
+print('максимальное кратное пяти: ', maxresult)
 
 
