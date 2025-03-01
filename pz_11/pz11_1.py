@@ -37,4 +37,5 @@ maxresult = (max(c)) // 5
 print('минимальное кратное двум: ', minresult)
 print('максимальное кратное пяти: ', maxresult)
 
+#новй
 
