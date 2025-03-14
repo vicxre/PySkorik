@@ -4,16 +4,21 @@
 #текста.
 
 f1 = open('text18-25.txt', 'r', encoding='utf-8')
+
 do = f1.read()
 
 print('БЫЛО:')
 print(do)
 
 #реплейс удаление из стр до и после
-stalo = do.replace('с','')
-stalo = do.replace('С','')
+stalo = do.replace('с','').replace('С','')
+
+f2 = open('save18-25.txt', 'w', encoding='utf-8')
+
+save = f2.write(stalo)
 
 f1.close()
+f2.close()
 
 print('СТАЛО:')
 print(stalo)
