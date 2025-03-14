@@ -10,7 +10,8 @@ print('БЫЛО:')
 print(do)
 
 #реплейс удаление из стр до и после
-stalo = do.replace('с','').replace('С','')
+stalo = do.replace('с','')
+stalo = do.replace('С','')
 
 f1.close()
 
