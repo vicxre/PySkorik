@@ -34,5 +34,12 @@ maxresult = (max(c)) // 5
 print('мин кратное 2: ', minresult)
 print('макс кратное 5: ', maxresult)
 
+f3 = open('save11_1.txt', 'w', encoding='utf-8')
+#save = f3.write(f1,f2)
+#save = f3.write(import print)
 
 
+
+f1.close()
+f2.close()
+f3.close()
