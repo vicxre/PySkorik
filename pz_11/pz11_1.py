@@ -26,7 +26,9 @@ listb = list(map(int, b.split(', ')))
 #колво элем 1and2:
 c = lista + listb
 print('кол-во элементов: ')
-print(len(c))
+kolvo = (len(c))
+print(kolvo)
+
 
 #min and max result
 minresult = (min(c)) // 2
@@ -36,8 +38,7 @@ print('макс кратное 5: ', maxresult)
 
 f3 = open('save11_1.txt', 'w', encoding='utf-8')
 #save = f3.write(f1,f2)
-#save = f3.write(import print)
-
+save = f3.write(kolvo)
 
 
 f1.close()
