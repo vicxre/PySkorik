@@ -29,13 +29,13 @@ print('кол-во элементов: ')
 kolvo = (len(c))
 print(kolvo)
 
-
 #min and max result
 minresult = (min(c)) // 2
 maxresult = (max(c)) // 5
 print('мин кратное 2: ', minresult)
 print('макс кратное 5: ', maxresult)
 
+#сохранить в новый
 f3 = open('save11_1.txt', 'w', encoding='utf-8')
 #save = f3.write(f1,f2)
 save = f3.write(kolvo)
