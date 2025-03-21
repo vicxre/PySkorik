@@ -8,38 +8,36 @@
 #Минимальный элемент кратный 2: 
 #Максимальный элемент кратный 5:
 
-a = '-2, 0, 2, 6, 10'
+a = (0,2,6,10,-2)
 f1 = open('file11_1.txt', 'w')
-f1.write(a)
+f1.write(str(a))
 print('элементы первого и второго: ')
 print(a)
 
-b = '-1, 1, 3, 7, 15'
+b = (1,3,7,15,-1)
 f2 = open('file11_2.txt', 'w')
-f2.write(b)
+f2.write(str(b))
 print(b)
 
-#стр в список цел чисел
-lista = list(map(int, a.split(', ')))
-listb = list(map(int, b.split(', ')))
+sorta =  sorted(a)
+sortb = sorted(b)
+print('сортировка a : ',sorta)
+print('сортировка b : ',sortb)
 
-#колво элем 1and2:
-c = lista + listb
-print('кол-во элементов: ')
+c = sorta + sortb
 kolvo = (len(c))
-print(kolvo)
+print('кол-во элементов: ',kolvo)
 
-#min and max result
-minresult = (min(c)) // 2
-maxresult = (max(c)) // 5
+minresult = int(min(c)) // 2
+maxresult = int(max(c)) // 5
 print('мин кратное 2: ', minresult)
 print('макс кратное 5: ', maxresult)
 
-#сохранить в новый
 f3 = open('save11_1.txt', 'w', encoding='utf-8')
-#save = f3.write(f1,f2)
-save = f3.write(kolvo)
-
+f3.write(str(sorta))
+f3.write(str(sortb))
+f3.write(str(minresult))
+f3.write(str(maxresult))
 
 f1.close()
 f2.close()
