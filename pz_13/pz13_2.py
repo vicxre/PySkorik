@@ -11,7 +11,7 @@ print(squared)
 
 
 
-#quadro = map(second ** 2)
+#second = map(second ** 2)
 #pow
 
 
