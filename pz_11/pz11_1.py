@@ -9,15 +9,13 @@
 #Максимальный элемент кратный 5:
 
 a = (0,2,6,10,-2)
-f1 = open('file11_1.txt', 'w')
+f1 = open('file11_1_1.txt', 'w')
 f1.write(str(a))
-print('элементы первого и второго: ')
-print(a)
 
 b = (1,3,7,15,-1)
-f2 = open('file11_2.txt', 'w')
+f2 = open('file11_1_2.txt', 'w')
 f2.write(str(b))
-print(b)
+print('элементы первого и второго: ', a,b)
 
 sorta =  sorted(a)
 sortb = sorted(b)
