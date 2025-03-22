@@ -26,8 +26,8 @@ c = sorta + sortb
 kolvo = (len(c))
 print('кол-во элементов: ',kolvo)
 
-minresult = int(min(c)) // 2
-maxresult = int(max(c)) // 5
+minresult = (min(c)) // 2
+maxresult = (max(c)) // 5
 print('мин кратное 2: ', minresult)
 print('макс кратное 5: ', maxresult)
 

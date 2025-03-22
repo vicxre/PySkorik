@@ -7,17 +7,15 @@ n = int(input('введи число: '))
 s = 'HELLO WORLD'
 sdlinan = len(s)
 
-#проверка вводимое >0
 if n < 0:
     print("введите не меньше нуля")
 
-#1 if dlina str S > N
+#если dlina str S > N
 else:
 
     if len(s) > n:
         print(s[n:])
 
-#2
     else:
         dot = '.' * n
         print(dot+s)
