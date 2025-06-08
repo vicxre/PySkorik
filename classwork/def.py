@@ -49,16 +49,16 @@
 # foo()
 # print(var2)
 
-def my_def(*args):
-    print(args)
-    return 'true'
+#def my_def(*args):
+  #  print(args)
+ #   return 'true'
 
 
-my_def( 1, 2, "true", 2.36)
-print(my_def())
-
-
+#my_def( 1, 2, "true", 2.36)
+#print(my_def())
 
 
 
 
+# В двумерном списке найти среднее арифметическое элементов последних двух
+# столбцов.
