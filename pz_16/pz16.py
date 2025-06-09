@@ -2,20 +2,21 @@
 #Напишите метод, который выводит информацию о машине в формате "Марка:
 #марка, Модель: модель, Год выпуска: год".
 
-class machine:
+class car:
 
     def __init__(self, brand, model, years):
         self.brand = brand
         self.model = model
         self.years = years
 
-    def inform(self):
-
-        tachila = machine('bmw', 'm5 f90', '2023')
+    def car(self):
 
         print(f'brand:{self.brand},model:{self.model},year of release:{self.years}')
 
-        tachila.inform()
+
+tachila = car(' bmw ', ' m5f90 ', ' 2023. ')
+
+tachila.car()
 
 
 
