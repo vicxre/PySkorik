@@ -11,10 +11,11 @@ class machine:
 
     def inform(self):
 
-        car = machine('bmw', 'm5 f90', '2023')
+        tachila = machine('bmw', 'm5 f90', '2023')
 
         print(f'brand:{self.brand},model:{self.model},year of release:{self.years}')
 
+        tachila.inform()
 
 
 
