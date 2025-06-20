@@ -4,30 +4,33 @@
 #"Легковой автомобиль", который наследуется от класса "Автомобиль" и содержит
 #информацию о количестве пассажиров.
 
-#bibika
 class car:
-
-    def __init__(self, brand, model, years):
+    def __init__(self, brand, model, release):
         self.brand = brand
         self.model = model
-        self.years = years
+        self.release = release
 
-    def car(self):
+        def inform(self):
+            return f"марка: {self,brand}, модель: {self.model}, год выпуска: {self.release}"
 
-        return f'brand:{self.brand},model:{self.model},year of release:{self.years}'
 
-
-#gruzovik
 class truck(car):
+    def __inir__(self, brand, model, release, weight_up):
+        super().__init__(brand, model, release)
+        self.weight_up = weight_up
 
-    def __init__(self, brand, model, years, gruzo):
-        super().__init__(brand, model, years)
-        self.gruzo = gruzo
+    def inform(self):
+        info = super().inform()
+        return f"{info}, грузоподъемность в тоннах: {self.weight_up}"
+
+class easycar(car):
+    def __init__(self, brand, model, release, passenger_num):
+        super().__init__(brand, model, release)
+        self.passenger_num = passenger_num
+
+    def inform(self):
+        base_info = super().inform()
+        return f'{base_info}, кол-во пассажиров: {self.passenger_num}'
 
 
 
-
-
-
-tachila = car(' bmw ', ' m5f90 ', ' 2023. ')
-massa = truck('8тонн')
