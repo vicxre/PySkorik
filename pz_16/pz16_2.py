@@ -23,6 +23,7 @@ class truck(car):
         info = super().inform()
         return f"{info}, грузоподъемность в тоннах: {self.weight_up}"
 
+
 class easycar(car):
     def __init__(self, brand, model, release, passenger_num):
         super().__init__(brand, model, release)
