@@ -33,6 +33,7 @@ root['bg'] = 'white'
 
 root.title('форма заявки')
 root.geometry('540x690')
+
 #прозрачность
 root.wm_attributes('-alpha', 0.9)
 
