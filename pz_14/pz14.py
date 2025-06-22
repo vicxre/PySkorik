@@ -5,4 +5,4 @@ f1 = open('Dostoevsky.txt', 'r', encoding='utf-8')
 
 txt =f1.read()
 
-composition =
+#composition
