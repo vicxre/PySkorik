@@ -3,7 +3,6 @@
 import random as r
 
 
-
 matrix = [[r.randint(1, 10) for _ in range(3)] for _ in range(3)]
 print("исходная: ", matrix)
 
