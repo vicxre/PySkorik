@@ -18,7 +18,7 @@ def btn1_click():
     messagebox.showinfo(title='название', message=info_str)
 
     #if error
-    messagebox.showerror(title='', message='ошибочка!')
+    messagebox.showerror(title='', message='ошибочка! заполните поля')
 
 
     print('отправлено')
