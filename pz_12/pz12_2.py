@@ -2,17 +2,38 @@
 
 from unicodedata import digit
 
-num = '13vc27holymoly'
+
+num = int(input('ПИШИ-->'))
 
 def numbers(num):
+    for i in num:
 
-
-    for n in num:
         if num.isdigit():
-            yield
+
+            yield num
 
 
 
-#yield from [x for x in num.isdigit()]
+
+
+
+
+
+
+
+
+
+
+
+
+
+#filter = [num for num in numbers if num = '123456789']
+
+#   for n in num:
+  #      if num.isdigit():
+   #         yield
+
+
+
 #print(numbers)
 
