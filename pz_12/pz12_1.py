@@ -5,6 +5,7 @@
 num = list(range(1, 13))
 
 
+
 first = 0
 
 last = len(num) - len(num)//3
