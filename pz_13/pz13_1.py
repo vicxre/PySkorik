@@ -5,10 +5,10 @@ import random as r
 
 
 
-matrix = [[r.randint(1, 10) for x in range(1, 5)] for y in range(r.randint(3, 4))]
+matrix = [[r.randint(1, 10) for _ in range(4)] for _ in range(4)]
+#вторая половина
 
-print(matrix)
+polovina = len(matrix) // 2
 
-
-#print(sum(str(answ[1])))
-
+sum_matr = sum(sum(row) for row in matrix[polovina:])
+print('исходаня матрица:',matrix, 'сложение второй половины: ',sum_matr)
