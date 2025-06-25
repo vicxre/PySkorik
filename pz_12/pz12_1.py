@@ -13,7 +13,8 @@ last = num[-parts:]
 
 new_num = last + mid + first
 
-print(new_num)
+print('до: ',num)
+print('после: ',new_num)
 
 
 

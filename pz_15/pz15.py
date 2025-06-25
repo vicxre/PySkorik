@@ -4,4 +4,4 @@
 
 import sqlite3 as sq
 
-with sq.connect("baza.db") as con:
+with sq.connect("baza_hospital.db") as con:
