@@ -1,10 +1,12 @@
 # Дана последовательность целых чисел. Поменять местами ее первую и
 # последнюю трети.
 
+def zamena(num):
 
-num = list(range(1, 13))
+    num = list(range(1, 13))
 
-parts = len(num) // 3
+    parts = len(num) // 3
+
 
 
 first = num[:parts]
