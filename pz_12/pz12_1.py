@@ -4,15 +4,19 @@
 
 num = list(range(1, 13))
 
+parts = len(num) // 3
 
 
-first = 0
+first = num[:parts]
+mid = num[parts:-parts]
+last = num[-parts:]
 
-last = len(num) - len(num)//3
-
-new_num = (last + first)
+new_num = last + mid + first
 
 print(new_num)
+
+
+
 
 
 
@@ -40,13 +44,6 @@ print(new_num)
 
 
 
-
-
-
 #tret = [num in num//3 for num]
 
 
-#print(list(filter(lambda x: x % 2 == [1, 2, 4, 5, 6])))
-
-
-#print(reduce(lambda x,y: y-x))
