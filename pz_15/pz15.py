@@ -4,7 +4,6 @@
 
 import sqlite3 as sq
 
-# Создание базы данных и таблицы Пациент
 with sq.connect("polyclinic.db") as con:
     cur = con.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS patients (
