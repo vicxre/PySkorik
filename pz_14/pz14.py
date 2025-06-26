@@ -1,29 +1,38 @@
 #В исходном текстовом файле(Dostoevsky.txt) найти все произведения писателя.
 #Посчитать количество полученных элементов.
 
+
 import re
 
 
-f1 = open('Dostoevsky.txt', 'r', encoding='utf-8')
-txt = f1.read()
-
-pattern = r'(?i)(?:роман|повесть|рассказ|опубл\.?)([^a-zA-Z]*([А-ЯЁ][\w\s]+))'
-works = re.findall(pattern, txt)
-unique_titles = set(works)
+def find(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        text = f.read()
 
 
-count_unique_titles = len(unique_titles)
+    pattern = r'(?:«|")([А-ЯЁ][А-Яа-яё\s\-—:]+?(?:\s*\([^)]+\))?)(?:»|")'
+    works = re.findall(pattern, text)
 
-for title in unique_titles:
-    print(title)
+    #удаляем дубликаты, сохраняя порядок
+    seen = set()
+    unique_works = [work for work in works if not (work in seen or seen.add(work))]
 
-print('кол-во произведений:', count_unique_titles)
-
-
-
-
+    return unique_works
 
 
+filename = 'Dostoevsky.txt'
+
+try:
+    works = find(filename)
+
+    print("произведения")
+    for i, work in enumerate(works, 1):
+        print(f"{i}. {work}")
+
+    print(f"\nвсего произведений: {len(works)}")
+
+except FileNotFoundError:
+    print("ошибка!!!")
 
 
 

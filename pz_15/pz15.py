@@ -14,7 +14,7 @@ with sq.connect("polyclinic.db") as con:
     treatment_cost DECIMAL(10, 2) NOT NULL
     )""")
 
-#вывести все строчки, где стоимость лечения больше 5000
+#все строчки, где стоимость лечения больше 5000
 with sq.connect("polyclinic.db") as con:
     cur = con.cursor()
     cur.execute("SELECT * FROM patients WHERE treatment_cost > 5000")
