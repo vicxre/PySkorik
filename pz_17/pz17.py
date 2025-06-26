@@ -3,80 +3,107 @@
 #приближенный к оригиналу.
 #https://www.digiseller.ru/preview/125077/p1_30116215520413.JPG
 
-from tkinter import *
-from tkinter import messagebox
-
-#окно
-root = Tk()
-
-def btn1_click():
-    name = loginInput1.get()
-    email = loginInput2.get()
-    message = loginInput3.get()
-
-    info_str = f'имя: {str(name)}, email: {email}, message: {message}'
-    messagebox.showinfo(title='название', message=info_str)
-
-    #if error
-    messagebox.showerror(title='', message='ошибочка! заполните поля')
+import tkinter as tk
+from tkinter import ttk, filedialog
 
 
-    print('отправлено')
+class ApplicationForm:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Форма заявки")
+        self.root.geometry("500x400")
 
-def btn2_click():
-    print('очищено')
+        self.create_widgets()
+
+    def create_widgets(self):
+        # Основной фрейм
+        main_frame = ttk.Frame(self.root, padding="10")
+        main_frame.pack(fill=tk.BOTH, expand=True)
+
+        # Информация о допустимых типах файлов
+        info_label = ttk.Label(
+            main_frame,
+            text="Допустимые типы вложений: zip, rar, txt, doc, jpg, png, gif, odt, xml\n"
+                 "Макс. размер каждого файла: 1024kb.\n"
+                 "Макс. общий размер файла: 2048kb.",
+            justify=tk.LEFT
+        )
+        info_label.pack(anchor=tk.W, pady=(0, 10))
+
+        # Создаем фрейм для формы
+        form_frame = ttk.Frame(main_frame)
+        form_frame.pack(fill=tk.X, pady=5)
+
+        # Поля формы
+        self.create_form_row(form_frame, "Ваше имя:", "*", 0)
+        self.create_form_row(form_frame, "Ваш Email:", "*", 1)
+        self.create_form_row(form_frame, "Тема письма:", "", 2)
+
+        # Поля для прикрепления файлов
+        self.file_entries = []
+        for i in range(3):
+            self.create_file_row(form_frame, f"Прикрепить файл:", i + 3)
+
+        # Поле для сообщения
+        msg_label = ttk.Label(main_frame, text="Ваше сообщение: *", justify=tk.LEFT)
+        msg_label.pack(anchor=tk.W, pady=(10, 0))
+
+        self.message_text = tk.Text(main_frame, height=5, wrap=tk.WORD)
+        self.message_text.pack(fill=tk.X, pady=5)
+
+        # Кнопки
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X, pady=10)
+
+        send_btn = ttk.Button(button_frame, text="Отправить Email")
+        send_btn.pack(side=tk.LEFT, padx=5)
+
+        clear_btn = ttk.Button(button_frame, text="Очистить")
+        clear_btn.pack(side=tk.LEFT)
+
+    def create_form_row(self, parent, label_text, required_text, row):
+        label = ttk.Label(parent, text=label_text)
+        label.grid(row=row, column=0, sticky=tk.W, padx=(0, 5), pady=2)
+
+        entry = ttk.Entry(parent)
+        entry.grid(row=row, column=1, sticky=tk.EW, pady=2)
+
+        if required_text:
+            req_label = ttk.Label(parent, text=required_text, foreground="red")
+            req_label.grid(row=row, column=2, sticky=tk.W, padx=(5, 0))
+
+        parent.columnconfigure(1, weight=1)
+
+    def create_file_row(self, parent, label_text, row):
+        label = ttk.Label(parent, text=label_text)
+        label.grid(row=row, column=0, sticky=tk.W, padx=(0, 5), pady=2)
+
+        entry = ttk.Entry(parent)
+        entry.grid(row=row, column=1, sticky=tk.EW, pady=2)
+        self.file_entries.append(entry)
+
+        browse_btn = ttk.Button(
+            parent,
+            text="Обзор...",
+            width=8,
+            command=lambda: self.browse_file(entry))
+        browse_btn.grid(row=row, column=2, padx=(5, 0))
+
+    def browse_file(self, entry):
+        filetypes = [
+            ('Архивы', '*.zip *.rar'),
+            ('Текстовые файлы', '*.txt *.doc *.odt *.xml'),
+            ('Изображения', '*.jpg *.png *.gif'),
+            ('Все файлы', '*.*')
+        ]
+
+        filename = filedialog.askopenfilename(filetypes=filetypes)
+        if filename:
+            entry.delete(0, tk.END)
+            entry.insert(0, filename)
 
 
-#задний фон
-root['bg'] = 'white'
-
-root.title('форма заявки')
-root.geometry('540x690')
-root.resizable(width=False, height=True)
-
-#прозрачность
-root.wm_attributes('-alpha', 0.9)
-
-#имя
-#frame_text = Frame(root)
-#frame_text.place(relx=1)
-
-title1 = Label(text='ваше имя', bg='gray', font=40)
-title1.pack()
-
-loginInput1 = Entry(bg='white')
-loginInput1.pack()
-
-#email
-title2 = Label(text='ваш email', bg='gray', font=40)
-title2.pack()
-
-loginInput2 = Entry(bg='white')
-loginInput2.pack()
-
-#сообщение
-title3 = Label(text='тема письма', bg='gray', font=40)
-title3.pack()
-
-loginInput3 = Entry (bg='white')
-loginInput3.pack()
-
-#кнопка отправки
-frame_btn1 = Frame(root, bg='green' )
-frame_btn1.place(relx=0.15, rely=0.5, relwidth=0.7, relheight=0.25)
-
-btn = Button(frame_btn1, text='отправить email', font=120, command=btn1_click)
-btn.pack()
-
-#кнопка делит
-frame_btn2 = Frame(root, bg='red')
-frame_btn2.place(relx=0.15, rely=0.8, relwidth=0.7, relheight=0.25)
-
-btn2 = Button(frame_btn2, text='очистить', font=120, command=btn2_click)
-btn2.pack()
-
-
-
-
-
-mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ApplicationForm(root)
+    root.mainloop()
