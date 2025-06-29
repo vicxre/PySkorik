@@ -11,7 +11,7 @@ class ApplicationForm:
     def __init__(self, root):
         self.root = root
         self.root.title("Форма заявки")
-        self.root.geometry("500x400")
+        self.root.geometry("500x420")
 
         self.create_widgets()
 
