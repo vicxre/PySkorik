@@ -18,7 +18,6 @@ filename = 'Dostoevsky.txt'
 print("произведения:")
 works = find(filename)
 
-
 try:
     for i, work in enumerate(works, 1):
         print(i, work)
